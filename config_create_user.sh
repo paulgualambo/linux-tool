@@ -21,3 +21,8 @@ sudo usermod -aG wheel $USER
 
 #delete
 #sudo deluser --remove-home $USER
+
+# En la maquina donde se ejecutará la IDE
+# mykey es la llave publica de la maquina donde se ejecutará la IDE
+ssh-copy-id -i ~/.ssh/mykey user@host
+ssh user@host -A
