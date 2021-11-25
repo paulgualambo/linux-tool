@@ -24,9 +24,11 @@ sudo usermod -aG wheel $USER
 
 # En la maquina donde se ejecutará la IDE
 # mykey es la llave publica de la maquina donde se ejecutará la IDE
-USER_T=<user>
-HOST_T=<host>
-ssh-copy-id -i ~/.ssh/id_rsa.pub $(USER_T)@$(HOST_T)
+# Eliminar manualmente en el archivo los host ha registrar
+# ~/.ssh/known_hosts
+USER_T=paul
+HOST_T=192.168.1.170
+ssh-copy-id -i ~/.ssh/id_rsa.pub ${USER_T}@${HOST_T}
 eval $(ssh-agent -s)
 ssh-add
-ssh $(USER_T)@$(HOST_T) -A
+ssh ${USER_T}@${HOST_T} -A
