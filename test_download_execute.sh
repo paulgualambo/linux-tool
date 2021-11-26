@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#Example01:
+
+PARAM1=$1
+PARAM2=$2
+PARAM3=$3
+
+echo "PARAM1: $PARAM1 PARAM2: $PARAM2 PARAM3: $PARAM3" 
+pwd

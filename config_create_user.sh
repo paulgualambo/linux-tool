@@ -3,30 +3,33 @@
 # References
 # https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/
 
+#CONST
+DEBIAN = "DEBIAN"
+RED_HAT = "RED_HAT"
+
 #Create user and password
-USER=paul
-EMAIL=<coloque email>
-PASSWORD=<coloque_cadena>
-COMMENT="Paul Gualambo Giraldo ${EMAIL}"
+TYPE_DISTRO=${1}
+USER=${2}
+EMAIL=${3}
+PASSWORD=${4}
+COMMENT="${USER} ${EMAIL}"
+
+# -m create home directory
+sudo useradd -c "${COMMENT}" -m $USER && echo ${USER}:${PASSWORD} | sudo chpasswd
 
 #Para ubuntu debian
-# -m create home directory
-sudo useradd -c "${COMMENT}" -m $USER && echo $USER:$PASSWORD | sudo chpasswd
-
-#Add user to sudoers ubuntu debian
-sudo usermod -aG sudo $USER 
+if [ $TYPE_DISTRO = $UBUNTU ]
+then
+    #Add user to sudoers ubuntu debian
+    sudo usermod -aG sudo ${USER} 
+fi
 
 #Add user to sudoers centos red hat amzn
-sudo usermod -aG wheel $USER
+if [ $TYPE_DISTRO = $RED_HAT ]
+then
+    sudo usermod -aG wheel ${USER}
+fi
+
 
 #delete
 #sudo deluser --remove-home $USER
-
-# En la maquina donde se ejecutará la IDE
-# mykey es la llave publica de la maquina donde se ejecutará la IDE
-USER_T=<user>
-HOST_T=<host>
-ssh-copy-id -i ~/.ssh/id_rsa.pub ${USER_T}@${HOST_T}
-eval $(ssh-agent -s)
-ssh-add
-ssh ${USER_T}@${HOST_T} -A
