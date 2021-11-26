@@ -7,7 +7,7 @@
 USER=${1}
 EMAIL=${2}
 PASSWORD=${3}
-COMMENT="Paul Gualambo Giraldo ${EMAIL}"
+COMMENT="${USER} ${EMAIL}"
 
 #Para ubuntu debian
 # -m create home directory
