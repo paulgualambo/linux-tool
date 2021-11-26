@@ -4,8 +4,8 @@
 # https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/
 
 #CONST
-DEBIAN = "DEBIAN"
-RED_HAT = "RED_HAT"
+DEBIAN="DEBIAN"
+RED_HAT="RED_HAT"
 
 #Create user and password
 TYPE_DISTRO=${1}
