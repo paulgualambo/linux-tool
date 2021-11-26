@@ -21,14 +21,14 @@ COMMENT="${USER} ${EMAIL}"
 sudo useradd -c "${COMMENT}" -m ${USER} && echo ${USER}:${PASSWORD} | sudo chpasswd
 
 #Para ubuntu debian
-if [ "$TYPE_DISTRO" = "$DEBIAN" ]
+if [ "$TYPE_DISTRO" = "$DEBIAN" ];
 then
     #Add user to sudoers ubuntu debian
     sudo usermod -aG sudo ${USER} 
 fi
 
 #Add user to sudoers centos red hat amzn
-if [ "$TYPE_DISTRO" = "$RED_HAT" ]
+if [ "$TYPE_DISTRO" = "$RED_HAT" ];
 then
     sudo usermod -aG wheel ${USER}
 fi
