@@ -4,20 +4,20 @@
 # https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/
 
 #Create user and password
-USER=paul
-EMAIL=<coloque email>
-PASSWORD=<coloque_cadena>
+USER=${1}
+EMAIL=${2}
+PASSWORD=${3}
 COMMENT="Paul Gualambo Giraldo ${EMAIL}"
 
 #Para ubuntu debian
 # -m create home directory
-sudo useradd -c "${COMMENT}" -m $USER && echo $USER:$PASSWORD | sudo chpasswd
+sudo useradd -c "${COMMENT}" -m $USER && echo ${USER}:${PASSWORD} | sudo chpasswd
 
 #Add user to sudoers ubuntu debian
-sudo usermod -aG sudo $USER 
+sudo usermod -aG sudo ${USER} 
 
 #Add user to sudoers centos red hat amzn
-sudo usermod -aG wheel $USER
+sudo usermod -aG wheel ${USER}
 
 #delete
 #sudo deluser --remove-home $USER
