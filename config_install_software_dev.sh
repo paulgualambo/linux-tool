@@ -5,6 +5,10 @@
 sudo apt install -y git
 sudo apt install -y nc nmap
 
+#Ingresar con el usuario con el quien se va a trabajar
+
+su <user>
+
 # centos amzn fedora 
 sudo yum install -y git
 sudo yum install -y nc nmap
