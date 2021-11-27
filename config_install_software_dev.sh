@@ -19,5 +19,7 @@ sudo timedatectl set-timezone "America/Lima"
 # Install bash-it
 cd ~
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-~/.bash_it/install.sh -y
-sed -i 's/'"$BASH_IT_THEME"'/pete/g' ~/.bashrc
+~/.bash_it/install.sh
+source ~/.bashrc
+sed -i 's/'$BASH_IT_THEME'/pete/g' ~/.bashrc
+bash_it reload
