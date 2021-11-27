@@ -1,3 +1,4 @@
+# wget -O - https://raw.githubusercontent.com/paulgualambo/linux-tool/main/config_access_remoto.sh | bash
 #!/bin/bash
 #Config access remoto
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config   
