@@ -35,7 +35,7 @@ then
 fi
 
 # busqueda del usuario
-sudo cat /etc/passwd | ${USER}
+sudo cat /etc/passwd | grep ${USER}
 
 #delete
 #sudo deluser --remove-home $USER
