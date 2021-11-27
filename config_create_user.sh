@@ -4,7 +4,7 @@
 # https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/
 
 #Execute remote script
-#wget -O - https://raw.githubusercontent.com/paulgualambo/linux-tool/main/config_create_user.sh| bash -s 'RED_HAT', 'paul', 'paul.gualambo@gmail.com' ,'P@ul1984'
+#wget -O - https://raw.githubusercontent.com/paulgualambo/linux-tool/main/config_create_user.sh| bash -s 'RED_HAT' 'paul' 'paul.gualambo@gmail.com' 'P@ul1984'
 
 #CONST
 DEBIAN="DEBIAN"
@@ -31,8 +31,11 @@ fi
 if [ "$TYPE_DISTRO" = "$RED_HAT" ];
 then
     sudo usermod -aG wheel ${USER}
+    echo "Se registro el usuario al grupo"
 fi
 
+# busqueda del usuario
+sudo cat /etc/passwd | ${USER}
 
 #delete
 #sudo deluser --remove-home $USER
