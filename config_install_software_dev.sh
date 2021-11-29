@@ -21,5 +21,5 @@ cd ~
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh
 source ~/.bashrc
-sed -i 's/'$BASH_IT_THEME'/pete/g' ~/.bashrc
+sed -i 's/'$BASH_IT_THEME'/atomic/g' ~/.bashrc
 bash_it reload
