@@ -16,6 +16,9 @@ sudo yum install -y nc nmap
 #Config timezone America/Lima
 sudo timedatectl set-timezone "America/Lima"
 
+#fix bash sh
+chsh -s /bin/bash
+
 # Install bash-it
 cd ~
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
