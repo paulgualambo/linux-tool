@@ -18,7 +18,7 @@ PASSWORD=${4}
 COMMENT="${USER} ${EMAIL}"
 
 # -m create home directory
-sudo useradd -c "${COMMENT}" -m ${USER} && echo ${USER}:${PASSWORD} | sudo chpasswd
+sudo useradd -s /bin/bash -c "${COMMENT}" -m ${USER} && echo ${USER}:${PASSWORD} | sudo chpasswd
 
 #Para ubuntu debian
 if [ "$TYPE_DISTRO" = "$DEBIAN" ];
